@@ -128,6 +128,20 @@ async def list_tools() -> List[Tool]:
             description="Check if GPT Researcher API is healthy",
             inputSchema={"type": "object", "properties": {}},
         ),
+        Tool(
+            name="quick_research",
+            description="Conduct quick research with minimal sources",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "The research query",
+                    },
+                },
+                "required": ["query"],
+            },
+        ),
     ]
 
 
@@ -210,6 +224,13 @@ async def call_tool(name: str, arguments: Dict[str, Any]) -> List[TextContent]:
 
         elif name == "health_check":
             result = make_api_request("health")
+            return [TextContent(type="text", text=str(result))]
+
+        elif name == "quick_research":
+            result = make_api_request(
+                "api/research/quick",
+                {"query": arguments["query"]},
+            )
             return [TextContent(type="text", text=str(result))]
 
         else:
