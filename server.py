@@ -169,6 +169,10 @@ def make_api_request(
         raise Exception("Could not connect to GPT Researcher API")
     except requests.exceptions.RequestException as e:
         logger.error(f"Request error: {e}")
+        if "429" in str(e):
+            raise Exception(
+                "GPT Researcher API rate limit exceeded. Please wait before retrying."
+            )
         raise Exception(f"GPT Researcher API request failed: {str(e)}")
 
 
