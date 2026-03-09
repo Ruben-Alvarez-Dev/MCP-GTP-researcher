@@ -47,7 +47,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set `GPT_RESEARCHER_BASE_URL` to your GPT Researcher instance.
+Set `GPT_RESEARCHER_BASE_URL` to your GPT Researcher instance. The default port is 10305.
 
 ## Configuration Reference
 
