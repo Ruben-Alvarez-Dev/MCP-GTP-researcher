@@ -28,9 +28,7 @@ class Config:
 
     def validate(self) -> bool:
         """Validate configuration."""
-        if not self.gpt_researcher_base_url:
-            return False
-        return True
+        return bool(self.gpt_researcher_base_url)
 
 
 def get_config() -> Config:
