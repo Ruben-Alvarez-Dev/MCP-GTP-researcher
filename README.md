@@ -249,6 +249,7 @@ For rapid assessment. Returns preliminary findings with key sources, suitable fo
 - Research operations take 3-5 minutes for comprehensive reports
 - Rate limiting depends on underlying GPT Researcher deployment
 - Network conditions affect source validation quality
+- Requires stable internet connection for source fetching
 
 ## Troubleshooting
 
