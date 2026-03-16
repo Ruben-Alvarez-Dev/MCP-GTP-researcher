@@ -26,3 +26,12 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Testing
+.pytest_cache/
+htmlcov/
+
+# Distribution
+dist/
+build/
+*.egg-info/
