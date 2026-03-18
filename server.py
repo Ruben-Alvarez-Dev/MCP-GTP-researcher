@@ -179,6 +179,12 @@ def make_api_request(
 @server.call_tool()
 async def call_tool(name: str, arguments: Dict[str, Any]) -> List[TextContent]:
     """Handle tool calls."""
+    if name in ("conduct_research", "quick_research", "get_sources"):
+        query = arguments.get("query", "").strip()
+        if not query:
+            return [TextContent(type="text", text="Error: query cannot be empty")]
+        arguments["query"] = query
+
     try:
         if name == "conduct_research":
             result = make_api_request(
