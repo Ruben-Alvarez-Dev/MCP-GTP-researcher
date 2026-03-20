@@ -265,6 +265,7 @@ For rapid assessment. Returns preliminary findings with key sources, suitable fo
 **Authentication errors**
 - Some GPT Researcher deployments require API keys
 - Set `OPENAI_API_KEY` in GPT Researcher's environment
+- Check that your API key has sufficient credits
 
 ## Contributing
 
