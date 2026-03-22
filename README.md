@@ -253,6 +253,10 @@ For rapid assessment. Returns preliminary findings with key sources, suitable fo
 
 ## Troubleshooting
 
+**Common Issues**
+
+
+
 **API unreachable**
 - Verify GPT Researcher is running at `GPT_RESEARCHER_BASE_URL`
 - Check firewall rules
